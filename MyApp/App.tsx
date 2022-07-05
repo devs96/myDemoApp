@@ -16,7 +16,6 @@ import {store} from './App/Store/Store';
 const App = () => {
   return (
     <Provider store={store}>
-      {/* <MainStack /> */}
       <DrawerBar />
     </Provider>
   );
