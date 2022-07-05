@@ -167,12 +167,14 @@ const AddTasks = ({route, navigation}: AddTaskProps) => {
                 />
               </View>
             </KeyboardAvoidingView>
-            <CustomButton
-              text={'SUBMIT'}
-              onPress={() => {
-                setShowPopup(true);
-              }}
-            />
+            {projectId !== '' && (
+              <CustomButton
+                text={'SUBMIT'}
+                onPress={() => {
+                  setShowPopup(true);
+                }}
+              />
+            )}
           </View>
         </TouchableWithoutFeedback>
       </ScrollView>
