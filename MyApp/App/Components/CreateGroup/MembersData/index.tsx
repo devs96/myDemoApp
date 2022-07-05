@@ -38,7 +38,7 @@ const MembersData: FC<MembersDataProps> = ({
   return (
     <View style={styles.container}>
       <View style={styles.selectedMainView}>
-        <ScrollView horizontal>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <RenderSelectedPeople />
         </ScrollView>
       </View>

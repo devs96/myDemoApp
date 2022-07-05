@@ -124,7 +124,7 @@ const CreateGroupDetails: FC<CreateGroupDetailsProps> = ({
             <View style={styles.peopleListView}>
               <Text>Members {selectedPeople.length}</Text>
             </View>
-            <ScrollView horizontal>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <RenderSelectedPeople />
             </ScrollView>
           </View>
