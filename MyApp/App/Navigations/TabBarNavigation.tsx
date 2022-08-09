@@ -1,11 +1,11 @@
 import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Colors from '../Theme/Colors/Colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Calendar from '../Screens/Calendar/Calendar';
 import Message from '../Screens/Message';
-import ManageTask from '../Screens/ManageTask';
+import Colors from '../Theme/Colors/Colors';
+import {DemoStackList} from './MainStack';
 
 export type TabBarParamsList = {
   ManageTask: undefined;
@@ -35,7 +35,7 @@ export const TabBarNavigation = () => {
       })}>
       <Tab.Screen name="Calendar" component={Calendar} />
       <Tab.Screen name="Message" component={Message} />
-      <Tab.Screen name="ManageTask" component={ManageTask} />
+      <Tab.Screen name="ManageTask" component={DemoStackList} />
     </Tab.Navigator>
   );
 };

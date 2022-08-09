@@ -23,6 +23,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {MainStackParamList} from '../../Navigations/MainStack';
 import {RootState} from '../../Store/Store';
 import {typeActions} from '../../Store/Actions';
+import HeaderBar from '../../Components/HeaderBar';
 
 type AddTaskProps = NativeStackScreenProps<MainStackParamList, 'AddTask'>;
 
@@ -101,6 +102,12 @@ const AddTasks = ({route, navigation}: AddTaskProps) => {
           }}
         />
       )}
+      <View style={{marginLeft: '5%'}}>
+        <HeaderBar
+          leftIconName="arrow-back"
+          leftIconClick={navigation.goBack}
+        />
+      </View>
 
       <ScrollView style={styles.scrollView}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>

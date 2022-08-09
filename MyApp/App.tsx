@@ -10,13 +10,14 @@
 import React from 'react';
 
 import {Provider} from 'react-redux';
-import {DrawerBar} from './App/Navigations/DrawerBar';
+import {MainStack} from './App/Navigations/MainStack';
 import {store} from './App/Store/Store';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <DrawerBar />
+      {/* <DrawerBar /> */}
+      <MainStack />
     </Provider>
   );
 };
