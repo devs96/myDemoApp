@@ -24,6 +24,8 @@ export type MainStackParamList = {
 
 const Stack = createStackNavigator<MainStackParamList>();
 
+//adb shell am start -W -a android.intent.action.VIEW -d "https://devtestingapp/creategroup/4"
+//adb shell am start -W -a android.intent.action.VIEW -d "https://devtestingapp/bottombar/tasks/addtask
 export const MainStack = () => {
   const linking: LinkingOptions<MainStackParamList> = {
     prefixes: ['devtestingapp://', 'https://devtestingapp'],
