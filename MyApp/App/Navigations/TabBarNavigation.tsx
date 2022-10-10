@@ -6,6 +6,10 @@ import Calendar from '../Screens/Calendar/Calendar';
 import Message from '../Screens/Message';
 import Colors from '../Theme/Colors/Colors';
 import {DemoStackList} from './MainStack';
+import {
+  RouteProp,
+  getFocusedRouteNameFromRoute,
+} from '@react-navigation/native';
 
 export type TabBarParamsList = {
   ManageTask: undefined;
@@ -14,6 +18,17 @@ export type TabBarParamsList = {
 };
 
 const Tab = createBottomTabNavigator<TabBarParamsList>();
+
+const setTabBarVisibility = (
+  route: RouteProp<TabBarParamsList, keyof TabBarParamsList>,
+) => {
+  const routeName = getFocusedRouteNameFromRoute(route);
+  const hideOnScreens = ['CreateGroup', 'PersonInfo'];
+  if (hideOnScreens.indexOf(routeName!) > -1) {
+    return 'none';
+  }
+  return undefined;
+};
 
 export const TabBarNavigation = () => {
   return (
@@ -32,6 +47,7 @@ export const TabBarNavigation = () => {
         tabBarActiveTintColor: Colors.NAVY_BLUE_COLOR,
         tabBarInactiveTintColor: Colors.BLACK,
         headerShown: false,
+        tabBarStyle: {display: setTabBarVisibility(route)},
       })}>
       <Tab.Screen name="Calendar" component={Calendar} />
       <Tab.Screen name="Message" component={Message} />
